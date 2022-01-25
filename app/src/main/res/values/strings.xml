@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My Scholarship Admin</string>
+    <string-array name="Continents">
+        <item>USA</item>
+        <item>South America</item>
+        <item>Europe</item>
+        <item>Asia</item>
+        <item>Australia</item>
+    </string-array>
+    <string-array name="program">
+        <item>Under Graduate</item>
+        <item>Masters</item>
+        <item>PHD</item>
+        <item>Internship</item>
+    </string-array>
+</resources>

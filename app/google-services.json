@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1045741346274",
+    "firebase_url": "https://my-scholarship-d0a82-default-rtdb.firebaseio.com",
+    "project_id": "my-scholarship-d0a82",
+    "storage_bucket": "my-scholarship-d0a82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045741346274:android:e74a5c7ed18602dcf86dbb",
+        "android_client_info": {
+          "package_name": "com.example.my_scholarship_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045741346274-a12taf805u9htlaqn6cb79kse1kvmlta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABWQJ6kpGScQ8nFJsHWD7IAFl_j6vJmtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045741346274-a12taf805u9htlaqn6cb79kse1kvmlta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045741346274:android:d67b10c8117d5f5bf86dbb",
+        "android_client_info": {
+          "package_name": "com.example.myscholarshipadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045741346274-a12taf805u9htlaqn6cb79kse1kvmlta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABWQJ6kpGScQ8nFJsHWD7IAFl_j6vJmtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045741346274-a12taf805u9htlaqn6cb79kse1kvmlta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
