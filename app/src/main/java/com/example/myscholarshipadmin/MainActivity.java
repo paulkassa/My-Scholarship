@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
     Button pick_image,post;
     ImageView imageview;
     Spinner spinner1,spinner2;
-    EditText et_countryName,et_deadline,et_organization;
+    EditText et_countryName,et_deadline,et_organization,et_link;
+    String Location;
 
     FirebaseDatabase mDatabase;
     DatabaseReference mRef;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         et_countryName = findViewById(R.id.country);
         et_deadline = findViewById(R.id.deadline);
         et_organization = findViewById(R.id.organization);
+        et_link = findViewById(R.id.link);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Continents, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.program, android.R.layout.simple_spinner_item);
@@ -66,9 +68,10 @@ public class MainActivity extends AppCompatActivity {
         spinner2.setAdapter(adapter2);
 
         mDatabase = FirebaseDatabase.getInstance();
-        mRef = mDatabase.getReference().child("Scholarships");
         mStorage = FirebaseStorage.getInstance();
         progressDialog = new ProgressDialog(this);
+
+
 
         pick_image.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -115,11 +118,34 @@ public class MainActivity extends AppCompatActivity {
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Location = spinner1.getSelectedItem().toString();
+                switch(Location)
+                {
+                    case "USA":
+                        mRef = mDatabase.getReference().child("Scholarships").child("USA");
+                        break;
+                    case "SAmerica":
+                        mRef = mDatabase.getReference().child("Scholarships").child("SAmerica");
+                        break;
+                    case "Europe":
+                        mRef = mDatabase.getReference().child("Scholarships").child("Europe");
+                        break;
+                    case "Asia":
+                        mRef = mDatabase.getReference().child("Scholarships").child("Asia");
+                        break;
+                    case "Australia":
+                        mRef = mDatabase.getReference().child("Scholarships").child("Australia");
+                        break;
+                    default:
+                        mRef = mDatabase.getReference().child("Scholarships");
+                }
+
                 String Continent = spinner1.getSelectedItem().toString();
                 String Program = spinner2.getSelectedItem().toString();
                 String CountryName = et_countryName.getText().toString();
                 String Deadline = et_deadline.getText().toString();
                 String Organization = et_organization.getText().toString();
+                String link = et_link.getText().toString();
                 if(!(Continent.isEmpty() && Program.isEmpty() && CountryName.isEmpty() && Deadline.isEmpty() && Organization.isEmpty() ))
                 {
                 progressDialog.setTitle("Uploading Data");
@@ -138,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                                     newPost.child("CountryName").setValue(CountryName);
                                     newPost.child("Deadline").setValue(Deadline);
                                     newPost.child("Organization").setValue(Organization);
+                                    newPost.child("Link").setValue(link);
                                     newPost.child("Image").setValue(task.getResult().toString());
                                     progressDialog.dismiss();
                                 }

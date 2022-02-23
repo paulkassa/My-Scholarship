@@ -2,7 +2,7 @@
     <string name="app_name">My Scholarship Admin</string>
     <string-array name="Continents">
         <item>USA</item>
-        <item>South America</item>
+        <item>SAmerica</item>
         <item>Europe</item>
         <item>Asia</item>
         <item>Australia</item>
